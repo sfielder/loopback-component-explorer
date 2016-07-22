@@ -1,0 +1,5 @@
+{
+  "e3641890888794940ecb6f1e6c3de0f4": "Explorer mounted at {{localhost:{0}/explorer}}",
+  "74ecc9f9e56fdca8aa42bd994ada5b77": "Explorer mounted at {{http://localhost:{0}/explorer}}",
+  "f3f2b04c273e23780d76306f8c72a60f": "{{loopback-component-explorer}} requires {{loopback}} 2.0 or newer"
+}

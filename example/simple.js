@@ -4,6 +4,8 @@
 // License text available at https://opensource.org/licenses/MIT
 
 var loopback = require('loopback');
+var SG = require('strong-globalize');
+var g = SG();
 var app = loopback();
 var explorer = require('../');
 var port = 3000;
@@ -19,6 +21,6 @@ app.model(Product);
 var apiPath = '/api';
 explorer(app, { basePath: apiPath });
 app.use(apiPath, loopback.rest());
-console.log('Explorer mounted at http://localhost:' + port + '/explorer');
+console.log(g.f('Explorer mounted at {{http://localhost:%s/explorer}}', port));
 
 app.listen(port);

@@ -15,6 +15,9 @@ var cors = require('cors');
 var createSwaggerObject = require('loopback-swagger').generateSwaggerSpec;
 var SWAGGER_UI_ROOT = require('strong-swagger-ui/index').dist;
 var STATIC_ROOT = path.join(__dirname, 'public');
+var SG = require('strong-globalize');
+SG.SetRootDir(__dirname);
+var g = SG();
 
 module.exports = explorer;
 explorer.routes = routes;
@@ -38,7 +41,8 @@ function routes(loopbackApplication, options) {
   loopback.version.split('.')[0] || 1;
 
   if (loopbackMajor < 2) {
-    throw new Error('loopback-component-explorer requires loopback 2.0 or newer');
+    throw new Error(g.t('{{loopback-component-explorer}} requires '+
+      '{{loopback}} 2.0 or newer'));
   }
 
   options = _defaults({}, options, {
